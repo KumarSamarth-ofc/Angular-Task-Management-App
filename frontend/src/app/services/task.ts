@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
-export class Task {
+export class TaskService {
   apiUrl = "http://localhost:5000/api/tasks";
   
   constructor(private http: HttpClient) { }

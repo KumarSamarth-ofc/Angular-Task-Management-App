@@ -36,4 +36,8 @@ export class Register {
       }
     })
   }
+
+  navigateToLogin() { 
+    this.router.navigate(['/login']);
+  }
 }

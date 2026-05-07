@@ -36,5 +36,9 @@ export class Login {
       }
     })
   }
+
+  navigateToSignup() {
+    this.router.navigate(['/register']);
+  }
  }
 
