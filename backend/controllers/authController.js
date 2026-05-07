@@ -6,7 +6,7 @@ const registerUser = async (req, res) => {
     try {
         const { name, email, password } = req.body;
         
-        const exisitingUser = await User.findOne({ email });
+        const existingUser = await User.findOne({ email });
 
         if (existingUser) {
             return res.status(400).json({ message: "User already exists" });
@@ -59,7 +59,17 @@ const loginUser = async (req, res) => {
     }
 }
 
+const getUser = async (req, res) => {
+    try {
+        res.json({message: "Protected profile route", user: req.user });
+    }catch (error) {
+        console.error("Error fetching user profile", error);
+        res.status(500).json({ message: "Server error" });
+    }
+}
+
 module.exports = {
   registerUser,
     loginUser,
+    getUser
 };
